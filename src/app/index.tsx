@@ -3,16 +3,15 @@ import { router } from "expo-router";
 import { Text, View, StyleSheet } from "react-native";
 
 
-export default function Login() {
+export default function Principal() {
     return (
         <View style={styles.container}>
 
             <Text style={styles.title}>Bem vindo{"\n"} ao Cesta {"\n"} do amanhã</Text>
-            <Botao onPress={()=> router.navigate("/paginaLogin")} title="Login" />
+            <Botao title="Login" onPress={() => router.navigate('/login')}/>
             <Text>Realize o login para acessar sua conta</Text>
-            <Botao title="Cadastro" />
+            <Botao title="Cadastro" onPress={()=> router.navigate('/paginaLogin')}/>
             <Text>Faça o cadastro se for sua primeira vez</Text>
-
         </View>
     )
 }
@@ -27,7 +26,5 @@ const styles = StyleSheet.create({
         fontSize: 55,
         textAlign: 'center',
         fontWeight: 'bold',
-    },
-
-
+    }
 })
